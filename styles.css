@@ -1,0 +1,111 @@
+:root {
+	--bg: #fffeF7;
+	--card: rgba(0, 0, 0, 0.04);
+	--border: rgba(0, 0, 0, 0.10);
+	--text: rgba(17, 24, 39, 0.92);
+	--muted: rgba(17, 24, 39, 0.68);
+	--yes: #22c55e;
+	--no: #ef4444;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+    background-color: var(--bg);
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	background:
+		radial-gradient(1100px 700px at 50% 22%, rgba(255, 124, 156, 0.16) 0%, rgba(255, 124, 156, 0) 55%),
+		radial-gradient(900px 600px at 12% 82%, rgba(59, 130, 246, 0.10) 0%, rgba(59, 130, 246, 0) 60%),
+		var(--bg);
+	color: var(--text);
+	font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+		"Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.wrap {
+	width: min(520px, calc(100vw - 32px));
+	text-align: center;
+}
+
+.frame {
+	background: var(--card);
+	border: 1px solid var(--border);
+	border-radius: 16px;
+	/* padding: 14px; */
+	/* box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55); */
+	backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+}
+
+.frame img {
+	width: 55%;
+	height: auto;
+	border-radius: 12px;
+	display: block;
+	object-fit: cover;
+	background: rgba(255, 255, 255, 0.04);
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+
+.buttons {
+	margin-top: 14px;
+	display: flex;
+	gap: 72px;
+	justify-content: center;
+}
+
+button {
+	--btn-translate-y: 0px;
+	--btn-jitter-x: 0px;
+	--btn-jitter-y: 0px;
+	--btn-scale: 1;
+	appearance: none;
+	border: 1px solid var(--border);
+	border-radius: 999px;
+	padding: 10px 18px;
+	margin-top: 12px;
+	font-weight: 600;
+	background: rgba(0, 0, 0, 0.03);
+	color: var(--text);
+	cursor: pointer;
+	min-width: 120px;
+	transform: translate(var(--btn-jitter-x), calc(var(--btn-translate-y) + var(--btn-jitter-y))) scale(var(--btn-scale));
+	transform-origin: center;
+	transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+}
+
+button:hover {
+	--btn-translate-y: -1px;
+}
+
+button:active {
+	--btn-translate-y: 0px;
+}
+
+.yes {
+	background-color: color-mix(in srgb, var(--yes) 45%, transparent);
+}
+
+.yes:hover {
+	background: color-mix(in srgb, var(--yes) 30%, transparent);
+}
+
+.no {
+	background-color: color-mix(in srgb, var(--no) 45%, transparent);
+}
+
+.no:hover {
+	background: color-mix(in srgb, var(--no) 30%, transparent);
+}
+
+

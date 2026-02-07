@@ -1,0 +1,14 @@
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Spotlight files
+.Spotlight-V100
+.Trashes
+
+# Folder config
+.idea/
+.vscode/
